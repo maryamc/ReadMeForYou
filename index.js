@@ -1,9 +1,10 @@
+// requiring all of the dependencies neccessary for application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
-import(generateMarkdown)
+const markdown = require('./utils/generateMarkdown');
 
-// array of questions for user
+/* function that will call user input
+this function uses inquirer.prompt to generate the prompts in the command line */
  function getUserInput(){
     inquirer.prompt([
         {
@@ -40,7 +41,6 @@ import(generateMarkdown)
             type:"checkbox",
             name:"License",
             message:"Choose a license to use",
-            default:"MIT",
             choices:[
                 "MIT",
                 "Apache 2.0",
@@ -51,27 +51,24 @@ import(generateMarkdown)
         },
         {
             type:"input",
-            name:"Description",
-            message:"Provide a brief description of your project?"
+            name:"Contributers",
+            message:"List all of the contributers for this project"
         }
     ]).then((data) => {
         const filename = `${data.Name.toLowerCase().split(' ').join('')}.json`; 
-        fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) => err ? console.log(err) : console.log('Success!')); 
+        fs.writeFile(filename, markdown(data), (err) => err ? console.log(err) : console.log('Success!')); 
     })
     // return data
 }
+
+getUserInput();
+
+
 // async function results() {
 //     await getUserInput();
 // } 
 // console.log(results);
-getUserInput();
 
-
-
-
-// const questions = [
-
-// ];
 
 // function to write README file (call inside the file function)
 // function writeToFile(fileName, data) {
