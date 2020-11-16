@@ -9,37 +9,37 @@ this function uses inquirer.prompt to generate the prompts in the command line *
     inquirer.prompt([
         {
             type:"input",
-            name:"Github Username",
+            name:"username",
             message:"What is your Github username?"
         },
         {
             type:"input",
-            name: "Email",
+            name: "email",
             message: "What is your email?"
         },
         {
             type:"input",
-            name: "Title",
+            name: "title",
             message: "What is your project title?"
         },
         {
             type:"input",
-            name:"Description",
+            name:"description",
             message:"Provide a brief description of your project?"
         },
         {
             type:"input",
-            name:"Installation",
+            name:"installation",
             message:"How is the application installed?"
         },
         {
             type:"input",
-            name:"Usage",
+            name:"usage",
             message:"What is the purpose of this application?"
         },
         {
-            type:"checkbox",
-            name:"License",
+            type:"list",
+            name:"license",
             message:"Choose a license to use",
             choices:[
                 "MIT",
@@ -51,12 +51,17 @@ this function uses inquirer.prompt to generate the prompts in the command line *
         },
         {
             type:"input",
-            name:"Contributers",
+            name:"contributers",
             message:"List all of the contributers for this project"
+        },
+        {
+            type: "input",
+            name:"questions",
+            message: "For any further questions feel free to contact me "
         }
     ]).then((data) => {
-        const filename = `${data.Name.toLowerCase().split(' ').join('')}.json`; 
-        fs.writeFile(filename, markdown(data), (err) => err ? console.log(err) : console.log('Success!')); 
+        // const filename = `${data..toLowerCase().split(' ').join('')}.json`; 
+        fs.writeFile("README.md", markdown(data), (err) => err ? console.log(err) : console.log('Success!')); 
     })
     // return data
 }
