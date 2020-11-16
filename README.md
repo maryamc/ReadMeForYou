@@ -4,7 +4,7 @@
   Good README Generator
 
 ## Description
-  The application is a readme.md generator. It will generate a readme.md from the command line by using node.
+  This applications is a readme.md generator. It will generate a readme.md from the command line by using node.
 
 ## Table of Contents
   * [description](#description)
@@ -16,13 +16,13 @@
   * [questions](#questions)
 
 ## Installation
-To install, the application must be cloned from my github repository. The link to that is https://github.com/maryamc/ReadMeForYou.git. Navigate to the repo, copy the SSH key, git clone that SSH key into the vscode.
+The application can be installed via my github repository https://github.com/maryamc/ReadMeForYou.git . Navigate to the repository, copy the SSH key, and then git clone that SSH key into your vscode and workspace of choice.
 
 ## Usage
-The usage of this application is to allow users to be able to create a README.md file straight from their command line. The user just has to type away and everything will be formatted and show up as a readme.
+The usage of this application is to allow the user to create a nice and clean README.md for their future projects. Its a nice and simple way for the user to let others know what is going on in their applications. By using this command line application, the format is already set up, so all the user has to do is just type away!
 
 ## Instructions
-To test this application, the user has to first as stated above do a git clone into ther vscode, then they should navigate to the index.js file and in the command line run node index.js and then all of these prompts will appear. They just need to be answered.
+To test the functionality of this application, once the repo has been cloned, the user must cd into the repo, ls to make sure theyre in the correct repo, navigate to index.js. Once in index.js the user must run the command 'node index.js' and answer all of the input prompts. Once complete, "success!" should be logged in the command line and the README.md will be visible in the repo.
 
 ## License
 MIT
