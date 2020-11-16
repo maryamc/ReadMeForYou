@@ -38,6 +38,11 @@ this function uses inquirer.prompt to generate the prompts in the command line *
             message:"What is the purpose of this application?"
         },
         {
+            type:"input",
+            name:"instructions",
+            message:"How would this application be tested?"
+        },
+        {
             type:"list",
             name:"license",
             message:"Choose a license to use",
@@ -51,7 +56,7 @@ this function uses inquirer.prompt to generate the prompts in the command line *
         },
         {
             type:"input",
-            name:"contributers",
+            name:"contributions",
             message:"List all of the contributers for this project"
         },
         {
